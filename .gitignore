@@ -1,0 +1,29 @@
+# Testing
+coverage/
+*.test.js.snap
+.jest-cache/
+
+# Environment
+.env
+.env.test
+.env.production
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+data/*.db
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+package-lock.json
