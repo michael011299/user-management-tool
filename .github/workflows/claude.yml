@@ -1,0 +1,70 @@
+name: Claude GitHub Agent Configuration
+version: 1.0
+
+# Project metadata
+project:
+  name: GTM/GA User Manager
+  description: Automated user management for Google Tag Manager and Analytics
+  type: nodejs
+  framework: express
+
+# Claude-specific settings
+claude:
+  # Enable automatic code review
+  code_review: true
+
+  # Enable automatic testing
+  auto_test: true
+
+  # Enable automatic documentation
+  auto_docs: true
+
+  # File patterns Claude should focus on
+  focus_patterns:
+    - "controllers/**/*.js"
+    - "services/**/*.js"
+    - "models/**/*.js"
+    - "routes/**/*.js"
+
+  # File patterns Claude should ignore
+  ignore_patterns:
+    - "node_modules/**"
+    - "coverage/**"
+    - "*.db"
+    - ".env"
+
+# Development workflow
+workflow:
+  # Run tests before commits
+  pre_commit:
+    - npm test
+
+  # Run linting (if enabled)
+  pre_push:
+    - echo "Ready to push"
+
+# Environment variables (safe to commit)
+environment:
+  required:
+    - PORT
+    - NODE_ENV
+    - REDIRECT_URI
+    - MONDAY_API_KEY
+    - ACCOUNT1_CLIENT_ID
+    - OFFBOARD_EMAIL
+
+  defaults:
+    PORT: 3000
+    NODE_ENV: development
+
+# Testing configuration
+testing:
+  framework: jest
+  coverage_threshold: 70
+  test_patterns:
+    - "__tests__/**/*.test.js"
+
+# Documentation
+documentation:
+  api_docs: /api-docs
+  readme: README.md

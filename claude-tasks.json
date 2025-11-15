@@ -1,0 +1,42 @@
+{
+  "tasks": {
+    "setup": {
+      "description": "Initial project setup",
+      "steps": [
+        "npm install",
+        "cp .env.example .env",
+        "mkdir -p data",
+        "echo 'Setup complete! Edit .env with your credentials.'"
+      ]
+    },
+    "dev": {
+      "description": "Start development server",
+      "command": "npm run dev"
+    },
+    "test": {
+      "description": "Run all tests",
+      "command": "npm test"
+    },
+    "test:watch": {
+      "description": "Run tests in watch mode",
+      "command": "npm run test:watch"
+    },
+    "deploy": {
+      "description": "Deploy to production",
+      "steps": ["npm test", "git push origin main"]
+    },
+    "add-account": {
+      "description": "Add a new agency account configuration",
+      "interactive": true,
+      "prompt": ["Account number (1-13)?", "Client ID?", "Client Secret?", "Refresh Token?"]
+    },
+    "check-capacity": {
+      "description": "Check account capacity",
+      "command": "curl http://localhost:3000/api/accounts/stats"
+    },
+    "migration-history": {
+      "description": "View recent migrations",
+      "command": "curl http://localhost:3000/api/migrations?limit=10"
+    }
+  }
+}
