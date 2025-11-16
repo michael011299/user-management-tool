@@ -1,0 +1,76 @@
+# GTM/GA User Management Tool - Frontend
+
+A React-based frontend application for managing Google Tag Manager and Google Analytics user permissions.
+
+## Features
+
+- **User Operations**: Migrate users, offboard clients, find accounts
+- **Capacity Dashboard**: Real-time monitoring of account capacity
+- **Migration History**: Complete audit trail of all operations
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+
+## Prerequisites
+
+- Node.js 16+
+- npm or yarn
+
+## Installation
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Run tests
+npm test
+
+# Build for production
+npm run build
+```
+
+## Environment Variables
+
+Create a `.env` file in the frontend directory:
+
+```
+REACT_APP_API_URL=http://localhost:3000/api
+```
+
+## Project Structure
+
+```
+src/
+├── components/      # React components
+│   ├── common/      # Reusable UI components
+│   ├── forms/       # Form components
+│   ├── layout/      # Layout components
+│   ├── dashboard/   # Dashboard components
+│   ├── history/     # History components
+│   └── results/     # Result display components
+├── hooks/           # Custom React hooks
+├── services/        # API services
+├── types/           # TypeScript type definitions
+├── utils/           # Utility functions
+└── mocks/           # Mock data for testing
+```
+
+## Testing
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+## Technologies
+
+- **React 18**: UI framework
+- **TypeScript**: Type safety
+- **Tailwind CSS**: Styling
+- **Axios**: HTTP client
+- **React Icons**: Icon library
+- **Jest & React Testing Library**: Testing
